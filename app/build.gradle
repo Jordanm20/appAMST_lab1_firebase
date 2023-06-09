@@ -14,10 +14,12 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    packagingOptions {
+        exclude 'androidsupportmultidexversion.txt'
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -64,5 +66,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.8'
 
     implementation 'com.google.firebase:firebase-database'
+
+    implementation 'com.android.support:multidex:1.0.3'
 
 }
